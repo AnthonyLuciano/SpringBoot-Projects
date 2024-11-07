@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Banco</h1>
+    <p>Seu saldo: <span th:text="${saldo}">0.00</span></p>
+
+    <form action="/banco/depositar" method="post">
+        <input type="number" name="valor" placeholder="Valor para depositar" required>
+        <button type="submit">Depositar</button>
+    </form>
+
+    <form action="/banco/sacar" method="post">
+        <input type="number" name="valor" placeholder="Valor para sacar" required>
+        <button type="submit">Sacar</button>
+    </form>
+
+    <a href="/banco/extrato">Ver Extrato</a>
+    <a href="/banco/logout">Logout</a>
+</body>
+</html>
